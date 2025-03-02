@@ -2,6 +2,12 @@
 name = "expression_macro"
 version = "0.1.0"
 edition = "2024"
+description = "Procedural macros for compile-time mathematical expression parsing"
+license = "MIT"
+repository = "https://github.com/Killer545537/Expression-Parser-Rust"
+readme = "../README.md"
+keywords = ["math", "parser"]
+categories = ["mathematics", "parsing"]
 
 [lib]
 proc-macro = true

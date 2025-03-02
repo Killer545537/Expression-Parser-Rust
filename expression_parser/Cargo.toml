@@ -2,6 +2,12 @@
 name = "expression_parser"
 version = "0.1.0"
 edition = "2024"
+description = "High-level API for mathematical expression parsing and evaluation"
+license = "MIT"
+repository = "https://github.com/Killer545537/Expression-Parser-Rust"
+readme = "../README.md"
+keywords = ["math", "parser"]
+categories = ["mathematics", "parsing"]
 
 [dependencies]
 expression_core = { path = "../expression_core" }

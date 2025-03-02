@@ -2,5 +2,11 @@
 name = "expression_core"
 version = "0.1.0"
 edition = "2024"
+description = "Core functionality for mathematical expression parsing"
+license = "MIT"
+repository = "https://github.com/Killer545537/Expression-Parser-Rust"
+readme = "../README.md"
+keywords = ["math", "parser"]
+categories = ["mathematics", "parsing"]
 
 [dependencies]
