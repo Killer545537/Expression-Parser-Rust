@@ -1,0 +1,8 @@
+[package]
+name = "expression_parser"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+expression_core = { path = "../expression_core" }
+expression_macro = { path = "../expression_macro" }
