@@ -77,7 +77,10 @@ impl Parser {
             match token {
                 Token::Plus => {
                     self.advance();
-                    expr = Expression::Add(Box::new(expr), Box::new(self.parse_multiplication_division()?));
+                    expr = Expression::Add(
+                        Box::new(expr),
+                        Box::new(self.parse_multiplication_division()?),
+                    );
                 }
                 Token::Minus => {
                     self.advance();

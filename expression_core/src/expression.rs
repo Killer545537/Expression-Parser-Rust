@@ -143,7 +143,12 @@ mod tests {
 
         assert_eq!(
             tokenize("sin(x)").unwrap(),
-            vec![Token::Function("sin".to_string()), Token::LParen, Token::Variable("x".to_string()), Token::RParen]
+            vec![
+                Token::Function("sin".to_string()),
+                Token::LParen,
+                Token::Variable("x".to_string()),
+                Token::RParen
+            ]
         );
 
         assert_eq!(
@@ -168,8 +173,14 @@ mod tests {
     #[test]
     fn test_parse_numbers_and_variables() {
         assert_eq!(parse_str("42").unwrap(), Expression::Number(42.0));
-        assert_eq!(parse_str("3.141592653589793").unwrap(), Expression::Number(std::f64::consts::PI));
-        assert_eq!(parse_str("x").unwrap(), Expression::Variable("x".to_string()));
+        assert_eq!(
+            parse_str("3.141592653589793").unwrap(),
+            Expression::Number(std::f64::consts::PI)
+        );
+        assert_eq!(
+            parse_str("x").unwrap(),
+            Expression::Variable("x".to_string())
+        );
     }
 
     #[test]
@@ -177,31 +188,46 @@ mod tests {
         // Addition
         assert_eq!(
             parse_str("1 + 2").unwrap(),
-            Expression::Add(Box::new(Expression::Number(1.0)), Box::new(Expression::Number(2.0)))
+            Expression::Add(
+                Box::new(Expression::Number(1.0)),
+                Box::new(Expression::Number(2.0))
+            )
         );
 
         // Subtraction
         assert_eq!(
             parse_str("5 - 3").unwrap(),
-            Expression::Subtract(Box::new(Expression::Number(5.0)), Box::new(Expression::Number(3.0)))
+            Expression::Subtract(
+                Box::new(Expression::Number(5.0)),
+                Box::new(Expression::Number(3.0))
+            )
         );
 
         // Multiplication
         assert_eq!(
             parse_str("2 * 3").unwrap(),
-            Expression::Multiply(Box::new(Expression::Number(2.0)), Box::new(Expression::Number(3.0)))
+            Expression::Multiply(
+                Box::new(Expression::Number(2.0)),
+                Box::new(Expression::Number(3.0))
+            )
         );
 
         // Division
         assert_eq!(
             parse_str("6 / 2").unwrap(),
-            Expression::Divide(Box::new(Expression::Number(6.0)), Box::new(Expression::Number(2.0)))
+            Expression::Divide(
+                Box::new(Expression::Number(6.0)),
+                Box::new(Expression::Number(2.0))
+            )
         );
 
         // Power
         assert_eq!(
             parse_str("2 ^ 3").unwrap(),
-            Expression::Power(Box::new(Expression::Number(2.0)), Box::new(Expression::Number(3.0)))
+            Expression::Power(
+                Box::new(Expression::Number(2.0)),
+                Box::new(Expression::Number(3.0))
+            )
         );
     }
 
@@ -227,9 +253,18 @@ mod tests {
         assert!(matches!(parse_str("sin(0)").unwrap(), Expression::Sin(_)));
         assert!(matches!(parse_str("cos(0)").unwrap(), Expression::Cos(_)));
         assert!(matches!(parse_str("tan(0)").unwrap(), Expression::Tan(_)));
-        assert!(matches!(parse_str("arcsin(0)").unwrap(), Expression::ArcSin(_)));
-        assert!(matches!(parse_str("arccos(1)").unwrap(), Expression::ArcCos(_)));
-        assert!(matches!(parse_str("arctan(0)").unwrap(), Expression::ArcTan(_)));
+        assert!(matches!(
+            parse_str("arcsin(0)").unwrap(),
+            Expression::ArcSin(_)
+        ));
+        assert!(matches!(
+            parse_str("arccos(1)").unwrap(),
+            Expression::ArcCos(_)
+        ));
+        assert!(matches!(
+            parse_str("arctan(0)").unwrap(),
+            Expression::ArcTan(_)
+        ));
 
         // Test function with expression argument
         assert!(matches!(
