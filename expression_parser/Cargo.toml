@@ -10,5 +10,5 @@ keywords = ["math", "parser"]
 categories = ["mathematics", "parsing"]
 
 [dependencies]
-expression_core = { path = "../expression_core" }
-expression_macro = { path = "../expression_macro" }
+expression_core = { version = "0.1.0", path = "../expression_core" }
+expression_macro = { version = "0.1.0", path = "../expression_macro" }

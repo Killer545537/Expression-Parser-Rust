@@ -16,4 +16,4 @@ proc-macro = true
 syn = "2.0.98"
 quote = "1.0.38"
 proc-macro2 = "1.0.93"
-expression_core = {path = "../expression_core"}
+expression_core = { version = "0.1.0", path = "../expression_core" }
